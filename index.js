@@ -2,17 +2,11 @@
 /* global require */
 'use strict';
 
-var LayoutCompiler = require('./lib/layout-compiler');
-var compileScssVariables = require('./lib/scss-variables-compiler');
-var mergeTrees = require('broccoli-merge-trees');
-var Funnel = require('broccoli-funnel');
 var path = require('path');
 var fs = require('fs');
-var commands = require('./lib/commands');
 
 var AttributeConversion = require('./dsl/attribute-conversion');
 var ComponentConversion = require('./dsl/component-conversion');
-var SustainConversion = require('./dsl/sustain-conversion');
 
 function assert(statement, test) {
   if (!test) {
@@ -21,7 +15,7 @@ function assert(statement, test) {
 }
 
 module.exports = {
-  name: 'flexi',
+  name: 'flexi-dsl',
 
   included: function(app, parentAddon) {
     this._super.included.apply(this, arguments);
@@ -45,9 +39,6 @@ module.exports = {
       throw new Error('ember-font-awesome is being used within another addon or engine and is' +
         ' having trouble registering itself to the parent application.');
     }
-
-    var pathBase = this.project.addonPackages.flexi.path;
-    compileScssVariables(path.join(pathBase, 'addon/styles'), this.flexiConfig());
 
     this.app = app;
     return app;
@@ -100,32 +91,5 @@ module.exports = {
       plugin: ComponentConversion,
       baseDir: function() { return __dirname; }
     });
-
-    registry.add('htmlbars-ast-plugin', {
-      name: "flexi-sustain-conversion",
-      plugin: SustainConversion,
-      baseDir: function() { return __dirname; }
-    });
-
-  },
-
-  preprocessTree: function(type, tree) {
-    if (type === 'template') {
-      if (!tree) {
-        throw new Error("No Template Tree is Present");
-      }
-      var layoutTree = new LayoutCompiler(tree, { breakpoints: this.flexiConfig().breakpoints });
-      var templateTree = new Funnel(tree, {
-        exclude: ['**/-layouts/*.hbs']
-      });
-      return mergeTrees([templateTree, layoutTree], { overwrite: true });
-    }
-
-    return tree;
-  },
-
-  includedCommands: function () {
-    return commands;
   }
-
 };

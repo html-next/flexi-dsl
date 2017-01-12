@@ -3,7 +3,6 @@
  An HTMLBars AST transformation that converts instances of
  layout elements to their corresponding layout-component
  */
-
 var removeAttribute = require("./helpers/remove-attribute");
 var getAttribute = require("./helpers/get-attribute");
 var MIN_COLUMN_COUNT = 1;
