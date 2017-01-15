@@ -1,13 +1,11 @@
 /* jshint node: true */
-'use strict';
 
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'dummy',
-    podModulePrefix: 'dummy/routes',
     environment: environment,
     rootURL: '/',
-    locationType: 'hash',
+    locationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -41,8 +39,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.locationType = 'hash';
-    ENV.baseURL = '/flexi/';
 
   }
 
