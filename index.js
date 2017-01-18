@@ -2,8 +2,7 @@
 /* global require */
 'use strict';
 
-var path = require('path');
-var fs = require('fs');
+var getValidatedFlexiConfig = require('flexi-config/lib/get-validated-flexi-config');
 
 var AttributeConversion = require('./dsl/attribute-conversion');
 var ComponentConversion = require('./dsl/component-conversion');
@@ -36,7 +35,7 @@ module.exports = {
     }
 
     if (!parentAddon && typeof app.import !== 'function') {
-      throw new Error('ember-font-awesome is being used within another addon or engine and is' +
+      throw new Error('flexi-dsl is being used within another addon or engine and is' +
         ' having trouble registering itself to the parent application.');
     }
 
@@ -51,22 +50,10 @@ module.exports = {
   _flexiConfig: null,
   flexiConfig: function() {
     if (!this._flexiConfig) {
-      var configPath = path.join(this.project.root, 'config', 'flexi.js');
-
-      if (fs.existsSync(configPath)) {
-        this._flexiConfig = require(configPath);
-
-        assert("config/flexi.js is defined, but could not be imported", this._flexiConfig);
-        assert("config/flexi.js is defined, but did not contain property [array] breakpoints", this._flexiConfig.breakpoints instanceof Array);
-        assert("config/flexi.js is defined, but did not contain property [number] columns", typeof this._flexiConfig.columns === 'number');
-
-      } else {
-        if (process.argv[2] !== 'install' && process.argv[3].indexOf('flexi') === -1) {
-          throw new Error("You must define a config file for flexi at '" + configPath + "'");
-        }
-      }
+      this._flexiConfig = getValidatedFlexiConfig(this.project.root);
     }
-    return this._flexiConfig || {};
+
+    return this._flexiConfig;
   },
 
   config: function() {
