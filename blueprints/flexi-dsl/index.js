@@ -1,6 +1,6 @@
 /*jshint node:true*/
 module.exports = {
-  description: 'Installs flexi-config',
+  normalizeEntityName: function() {},
 
   afterInstall: function(options) {
     return this.addAddonToProject({ name: 'flexi-config' });

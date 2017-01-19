@@ -1,6 +1,6 @@
 {
   "name": "flexi-dsl",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Just a layout framework. Design for cross-platform with ease.",
   "keywords": [
     "layout",
@@ -70,9 +70,6 @@
     "eslint-plugin-ember-suave": "^1.0.0",
     "flexi-config": "^0.1.1",
     "loader.js": "^4.0.10"
-  },
-  "peerDependencies": {
-    "flexi-config": "^0.1.1"
   },
   "engines": {
     "node": ">= 0.12.0"
