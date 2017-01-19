@@ -2,7 +2,7 @@
 module.exports = {
   normalizeEntityName: function() {},
 
-  beforeInstall: function(options) {
+  afterInstall: function(options) {
     return this.addAddonToProject({ name: 'flexi-config' });
   }
 };

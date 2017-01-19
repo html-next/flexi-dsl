@@ -2183,9 +2183,9 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flexi-config@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/flexi-config/-/flexi-config-0.1.1.tgz#fd93fc08c9af1bedfb53820a10bd5b1f64d7b07e"
+flexi-config@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/flexi-config/-/flexi-config-0.1.2.tgz#99d1ebd1950100dd45910a6661cf160ab64b9572"
   dependencies:
     ember-cli-babel "^5.1.7"
 
