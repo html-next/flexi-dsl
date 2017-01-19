@@ -2,8 +2,6 @@
 /* global require */
 'use strict';
 
-var getValidatedFlexiConfig = require('flexi-config/lib/get-validated-flexi-config');
-
 var AttributeConversion = require('./dsl/attribute-conversion');
 var ComponentConversion = require('./dsl/component-conversion');
 
@@ -50,6 +48,8 @@ module.exports = {
   _flexiConfig: null,
   flexiConfig: function() {
     if (!this._flexiConfig) {
+      var getValidatedFlexiConfig = require('flexi-config/lib/get-validated-flexi-config');
+
       this._flexiConfig = getValidatedFlexiConfig(this.project.root);
     }
 
