@@ -1,6 +1,6 @@
 {
   "name": "flexi-dsl",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Just a layout framework. Design for cross-platform with ease.",
   "keywords": [
     "layout",
@@ -43,6 +43,7 @@
     "debug": "^2.2.0",
     "ember-cli-babel": "^5.1.7",
     "ember-cli-preprocess-registry": "^3.0.0",
+    "flexi-config": "^0.1.2",
     "object-assign": "^4.1.0",
     "rsvp": "^3.2.0"
   },
@@ -68,7 +69,6 @@
     "ember-resolver": "^2.0.3",
     "ember-source": "^2.11.0-beta.2",
     "eslint-plugin-ember-suave": "^1.0.0",
-    "flexi-config": "^0.1.1",
     "loader.js": "^4.0.10"
   },
   "engines": {
