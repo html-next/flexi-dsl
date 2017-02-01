@@ -2,7 +2,14 @@
 module.exports = {
   normalizeEntityName: function() {},
 
-  afterInstall: function(options) {
-    return this.addAddonToProject({ name: 'flexi-config' });
+  beforeInstall: function() {
+    var options = {
+      args: ['flexi-config'],
+      dryRun: false,
+      verbose: false,
+      disableAnalytics: false
+    };
+
+    return this.taskFor('generate-from-blueprint').run(options);
   }
 };
