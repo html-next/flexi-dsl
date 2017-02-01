@@ -1,6 +1,6 @@
 {
-  "name": "flexi-dsl",
-  "version": "1.2.10",
+  "name": "@html-next/flexi-dsl",
+  "version": "2.0.0-beta.1",
   "description": "Just a layout framework. Design for cross-platform with ease.",
   "keywords": [
     "layout",
@@ -9,8 +9,6 @@
     "ember",
     "flexbox",
     "grid",
-    "recycle",
-    "recycling",
     "ember-addon"
   ],
   "license": "MIT",
