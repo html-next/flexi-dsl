@@ -185,20 +185,30 @@ proto.transform = function AttributeConversionSupport_transform(ast) {
         }
       });
 
-      if (!classAttr) {
-        if (!classNames.length) {
-          return;
-        }
-        classAttr = {
-          type: "AttrNode",
-          name: "class",
-          value: { type: "TextNode", chars: "" }
-        };
-        node.attributes.push(classAttr);
-      }
       debug(chalk.magenta("\t\tFinal Class: ") + chalk.white(classNames.join(" ")));
 
-      classAttr.value.chars = classNames.join(" ");
+      if (!classNames.length) {
+        return;
+      }
+
+      if (!classAttr) {
+        node.attributes.push({
+          type: "AttrNode",
+          name: "class",
+          value: { type: "TextNode", chars: classNames.join(" ") }
+        });
+
+        return;
+      }
+
+      // If the AttrNode for "class" contains a MustacheStatement, `{{somethingDynamic}}`,
+      // it will be a ConcatStatement node. In such a case, add a TextNode with our
+      // classes to the list of Nodes to be concatenated.
+      if (classAttr.value.type === "ConcatStatement") {
+        classAttr.value.parts.push({ type: "TextNode", chars: " " + classNames.join(" ") });
+      } else {
+        classAttr.value.chars = classNames.join(" ");
+      }
     }
   });
 
