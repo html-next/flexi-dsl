@@ -1,24 +1,7 @@
 /*jshint node:true*/
-/*
- 1.12 and prior support may work, but is sadly untestable so long
- as liquid-fire is used for the docs. liquid-fire 0.19.x's
- template compiler cannot handle flexi.
- */
 module.exports = {
   useVersionCompatibility: true,
   scenarios: [
-    {
-      name: 'ember-1.13.13',
-      bower: {
-        dependencies: {
-          'ember': '~1.13.13',
-          'ember-cli-shims': '0.1.1'
-        },
-        resolutions: {
-          'ember': '~1.13.13'
-        }
-      }
-    },
     {
       name: 'ember-lts-2.4',
       bower: {
