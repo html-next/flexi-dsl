@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@html-next/flexi-config@2.0.0-beta.2":
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@html-next/flexi-config/-/flexi-config-2.0.0-beta.2.tgz#664eda42e1cda5f05322447852815b92af085fa4"
+"@html-next/flexi-config@2.0.0-beta.6":
+  version "2.0.0-beta.6"
+  resolved "https://registry.npmjs.org/@html-next/flexi-config/-/flexi-config-2.0.0-beta.6.tgz#bdf5513e3446ad86d53fd5c087c2c61097cfd42e"
   dependencies:
     ember-cli-babel "^5.1.7"
 
