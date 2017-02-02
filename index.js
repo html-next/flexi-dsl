@@ -2,7 +2,7 @@
 /* global require */
 'use strict';
 
-var getValidatedFlexiConfig = require('flexi-config/lib/get-validated-flexi-config');
+var getValidatedFlexiConfig = require('@html-next/flexi-config/lib/get-validated-flexi-config');
 
 var AttributeConversion = require('./dsl/attribute-conversion');
 var ComponentConversion = require('./dsl/component-conversion');
