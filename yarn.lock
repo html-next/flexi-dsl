@@ -1009,13 +1009,13 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@2.8.x, commander@^2.5.0, commander@^2.6.0:
+commander@2.8.x, commander@^2.6.0:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.8.1.tgz#06be367febfda0c330aa1e2a072d3dc9762425d4"
   dependencies:
     graceful-readlink ">= 1.0.0"
 
-commander@^2.9.0:
+commander@^2.5.0, commander@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.9.0.tgz#9c99094176e12240cb22d6c5146098400fe0f7d4"
   dependencies:
@@ -1422,11 +1422,12 @@ ember-cli-get-dependency-depth@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-get-dependency-depth/-/ember-cli-get-dependency-depth-1.0.0.tgz#e0afecf82a2d52f00f28ab468295281aec368d11"
 
-ember-cli-github-pages@0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/ember-cli-github-pages/-/ember-cli-github-pages-0.0.8.tgz#06043db6e5a4b58575be10a262d88a6948247547"
+ember-cli-github-pages@0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/ember-cli-github-pages/-/ember-cli-github-pages-0.1.2.tgz#83b11d307858595582ba61e90602209a37d5b348"
   dependencies:
     ember-cli-babel "^5.1.3"
+    ember-cli-version-checker "^1.1.6"
     rsvp "^3.0.14"
 
 ember-cli-htmlbars-inline-precompile@^0.3.3:
@@ -1535,6 +1536,14 @@ ember-cli-release@^0.2.9:
     semver "^4.3.1"
     silent-error "^1.0.0"
 
+ember-cli-shims@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ember-cli-shims/-/ember-cli-shims-1.0.2.tgz#e2ec1b6687f94df1b68cc0aa66c1d690d9ded02c"
+  dependencies:
+    ember-cli-babel "^5.2.1"
+    ember-cli-version-checker "^1.2.0"
+    silent-error "^1.0.1"
+
 ember-cli-sri@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ember-cli-sri/-/ember-cli-sri-2.1.1.tgz#971620934a4b9183cf7923cc03e178b83aa907fd"
@@ -1569,13 +1578,13 @@ ember-cli-valid-component-name@^1.0.0:
   dependencies:
     silent-error "^1.0.0"
 
-ember-cli-version-checker@^1.0.2, ember-cli-version-checker@^1.1.4, ember-cli-version-checker@^1.1.6, ember-cli-version-checker@^1.1.7:
+ember-cli-version-checker@^1.0.2, ember-cli-version-checker@^1.1.4, ember-cli-version-checker@^1.1.6, ember-cli-version-checker@^1.1.7, ember-cli-version-checker@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ember-cli-version-checker/-/ember-cli-version-checker-1.2.0.tgz#caa286b77d1b485df5d2f62c67a6f19aa8b582c4"
   dependencies:
     semver "^5.3.0"
 
-ember-cli@^2.11.0:
+ember-cli@2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-2.11.0.tgz#29461b1b3b1d7412b60dfc14e9399ba49ac9b707"
   dependencies:
@@ -1696,9 +1705,9 @@ ember-router-generator@^1.0.0:
   dependencies:
     recast "^0.11.3"
 
-ember-source@^2.11.0-beta.2:
-  version "2.11.0-beta.2"
-  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-2.11.0-beta.2.tgz#a96c27e908503aa61438175b2c981e8a0acb36c6"
+ember-source@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-2.11.0.tgz#fada3652feaaa5ed1fffd40c9ec68ca995801d73"
   dependencies:
     broccoli-stew "^1.2.0"
     ember-cli-get-component-path-option "^1.0.0"
@@ -1707,6 +1716,7 @@ ember-source@^2.11.0-beta.2:
     ember-cli-string-utils "^1.0.0"
     ember-cli-test-info "^1.0.0"
     ember-cli-valid-component-name "^1.0.0"
+    ember-cli-version-checker "^1.1.7"
     jquery "^3.1.1"
     resolve "^1.1.7"
     rsvp "^3.3.3"
@@ -3550,11 +3560,11 @@ mustache@^2.2.1:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/mustache/-/mustache-2.3.0.tgz#4028f7778b17708a489930a6e52ac3bca0da41d0"
 
-mute-stream@0.0.5, mute-stream@~0.0.4:
+mute-stream@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.5.tgz#8fbfabb0a98a253d3184331f9e8deb7372fac6c0"
 
-mute-stream@0.0.6:
+mute-stream@0.0.6, mute-stream@~0.0.4:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.6.tgz#48962b19e169fd1dfc240b3f1e7317627bbc47db"
 
@@ -4164,7 +4174,19 @@ read@1, read@1.0.x, read@~1.0.1, read@~1.0.7:
   dependencies:
     mute-stream "~0.0.4"
 
-"readable-stream@1 || 2", readable-stream@^2, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.2, readable-stream@^2.2.2:
+"readable-stream@1 || 2", readable-stream@^2, readable-stream@^2.0.2, readable-stream@~2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
+  dependencies:
+    buffer-shims "^1.0.0"
+    core-util-is "~1.0.0"
+    inherits "~2.0.1"
+    isarray "~1.0.0"
+    process-nextick-args "~1.0.6"
+    string_decoder "~0.10.x"
+    util-deprecate "~1.0.1"
+
+"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.2.tgz#a9e6fec3c7dda85f8bb1b3ba7028604556fc825e"
   dependencies:
@@ -4189,18 +4211,6 @@ readable-stream@~2.0.5:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "~1.0.0"
-    process-nextick-args "~1.0.6"
-    string_decoder "~0.10.x"
-    util-deprecate "~1.0.1"
-
-readable-stream@~2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
-  dependencies:
-    buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
     inherits "~2.0.1"
     isarray "~1.0.0"
