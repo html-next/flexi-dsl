@@ -1,6 +1,6 @@
 {
   "name": "@html-next/flexi-dsl",
-  "version": "2.0.0-beta.10",
+  "version": "2.0.0-beta.11",
   "description": "Just a layout framework. Design for cross-platform with ease.",
   "keywords": [
     "layout",
@@ -31,13 +31,12 @@
   },
   "repository": "https://github.com/html-next/flexi-dsl.git",
   "scripts": {
-    "suave": "jscs addon app tests --fix",
     "build": "ember build",
     "start": "ember server",
     "test": "ember try:each"
   },
   "dependencies": {
-    "@html-next/flexi-config": "2.0.0-beta.6",
+    "@html-next/flexi-config": "2.0.0-beta.11",
     "chalk": "^1.1.1",
     "debug": "^2.2.0",
     "ember-cli-babel": "^5.1.7",
