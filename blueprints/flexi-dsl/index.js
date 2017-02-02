@@ -3,13 +3,6 @@ module.exports = {
   normalizeEntityName: function() {},
 
   afterInstall: function() {
-    var options = {
-      args: ['flexi-config'],
-      dryRun: false,
-      verbose: false,
-      disableAnalytics: false
-    };
-
-    return this.taskFor('generate-from-blueprint').run(options);
+    return this.addAddonToProject({ name: '@html-next/flexi-config', target: '2.0.0-beta.6' });
   }
 };
