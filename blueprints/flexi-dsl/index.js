@@ -4,7 +4,7 @@ module.exports = {
 
   afterInstall: function() {
     var options = {
-      args: ['@html-next/flexi-config'],
+      args: ['flexi-config'],
       dryRun: false,
       verbose: false,
       disableAnalytics: false
