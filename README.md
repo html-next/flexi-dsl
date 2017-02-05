@@ -6,6 +6,10 @@
 
 Attribute and layout-component conversions for flexi elements.
 
+Attributes: https://flexi.readme.io/docs/attributes
+
+`<container>` and `<grid responsive>` layout components: https://flexi.readme.io/docs/elements
+
 ### Installation
 
 It is recommended that you manage your flexi addons through [the main flexi addon](https://github.com/html-next/flexi):
@@ -24,12 +28,6 @@ ember instal @html-next/flexi-dsl
 ```
 
 Note that no default styles will be included unless you also install [flexi-default-styles](https://github.com/html-next/flexi-default-styles).
-
-### Documentation
-
-https://flexi.readme.io/docs/attributes
-
-Also converts the `<container>` element [here](https://flexi.readme.io/docs/elements) into its component form.
 
 ## Support, Questions, Collaboration
 
