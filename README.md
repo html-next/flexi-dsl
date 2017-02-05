@@ -28,6 +28,7 @@ Note that no default styles will be included unless you also install [flexi-defa
 ### Documentation
 
 https://flexi.readme.io/docs/attributes
+
 Also converts the `<container>` element [here](https://flexi.readme.io/docs/elements) into its component form.
 
 ## Support, Questions, Collaboration
