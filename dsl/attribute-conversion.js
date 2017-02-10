@@ -1,4 +1,6 @@
 /* jshint node:true */
+"use strict"
+
 /**
  * An HTMLBars AST transformation that converts
  * flexi attributes into CSS classes
