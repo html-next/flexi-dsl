@@ -1,12 +1,12 @@
-/* jshint node:true */
-"use strict"
+/* eslint-env node */
+'use strict';
 
 /**
  * An HTMLBars AST transformation that converts
  * flexi attributes into CSS classes
  **/
-let DSL = require('./dsl-defaults');
-let MIN_COLUMN_COUNT = 1;
+const DSL = require('./dsl-defaults');
+const MIN_COLUMN_COUNT = 1;
 let assign = require('object-assign');
 let chalk = require('chalk');
 let debug = require('debug')('flexi');
@@ -21,10 +21,10 @@ let removeAttributeFromNode = require("./helpers/remove-attribute");
  **/
 class AttributeConversionSupport {
   constructor() {
-    // NOTE: this.flexiConfig is added to the prototype from index.js
     this.dsl = {};
     assign(this.dsl, DSL);
 
+    // this.flexiConfig is added to the prototype from index.js
     this.dsl.generateGridClass = this.flexiConfig.generateGridClass || this.dsl.generateGridClass;
     this.dsl.generateResponderClass = this.flexiConfig.generateResponderClass || this.dsl.generateResponderClass;
     this.dsl.generateAttributeClass = this.flexiConfig.generateAttributeClass || this.dsl.generateAttributeClass;
@@ -67,6 +67,9 @@ class AttributeConversionSupport {
      * };
      **/
 
+    // Since this is an htmlbars-ast-plugin (as defined in index.js),
+    // it inherits a syntax property from tildeio/htmlbars:
+    // https://github.com/tildeio/htmlbars/blob/master/packages/htmlbars-syntax/lib/parser.js#L17
     let _walker = new this.syntax.Walker();
 
     _walker.visit(ast, (node) => {
@@ -177,19 +180,17 @@ class AttributeConversionSupport {
   _convertAttribute(node, attribute) {
     let isComplex = typeof attribute !== 'string';
     let name = isComplex ? attribute.name : attribute;
-    let values = isComplex ? attribute.values : [];
     let attr = getAttribute(node, name);
-    let value;
 
     if (attr) {
-      value =  attr.value.chars;
+      let value =  attr.value.chars;
 
       if (!isComplex && value) {
         throw new Error("Flexi#attribute-conversion:: Attribute '" + attribute +
           "' does not expect a value, given '" + value + "'.");
       }
 
-      if (isComplex && values.indexOf(value) === -1) {
+      if (isComplex && attribute.values.indexOf(value) === -1) {
         throw new Error("Flexi#attribute-conversion:: '" + value +
           "' is not a valid value for " + name + ".");
       }

@@ -9,7 +9,7 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`<box xs="12 visible horizontal wrap"></box>`);
+  this.render(hbs`<box align="center" vertical sm="12 visible horizontal wrap"></box>`);
 
   let box = this.$().find('box').get(0);
 
@@ -19,6 +19,6 @@ test('it renders', function(assert) {
     `We rendered the <box>: ${box.outerHTML}`);
   assert.equal(
     box.className,
-    'col-xs-12 visible-xs horizontal-xs wrap-xs',
+    'flexi-vertical align-center col-sm-12 visible-sm horizontal-sm wrap-sm',
     `We rendered the right class names: ${box.outerHTML}`);
 });
