@@ -1,30 +1,44 @@
 /* jshint node: true */
 'use strict';
 
-var LayoutProperties = ["wrap", "nowrap", "fit", "fill", "horizontal", "vertical"];
+const LAYOUT_PROPERTIES = [
+  "fill",
+  "fit",
+  "horizontal",
+  "nowrap",
+  "vertical",
+  "wrap",
+  { name: 'align', values: ["start", "end", "stretch", "center", "baseline"] },
+  { name: 'justify', values: ["start", "end", "center", "between", "around"] },
+];
 
 /*
   Flexi DSL
  */
 module.exports = {
 
-  generateGridClass: function(breakpoint, colNumber, columnPrefix /*, totalColumns*/) {
-    return (columnPrefix ? columnPrefix + "-" : "") + breakpoint.prefix + "-" + colNumber;
+  generateGridClass: function(breakpointPrefix, colNumber, columnPrefix /*, totalColumns*/) {
+    return (columnPrefix ? columnPrefix + "-" : "") + breakpointPrefix + "-" + colNumber;
   },
 
-  generateResponderClass: function(breakpoint, responder) {
-    return responder + "-" + breakpoint.prefix;
-  },
-
-  generateAttributeClass: function(property, value) {
+  generateResponderClass: function(breakpointPrefix, responder, value) {
     if (value) {
-      return property + "-" + value;
+      return `${responder}-${value}-${breakpointPrefix}`;
     }
-    return "flexi-" + property;
+
+    return `${responder}-${breakpointPrefix}`;
   },
 
-  generateOffsetClass: function(breakpoint, colNumber, columnPrefix /*, totalColumns*/) {
-    return (columnPrefix ? columnPrefix + "-" : "") + "offset-" + breakpoint.prefix + "-" + colNumber;
+  generateAttributeClass: function(attribute, value) {
+    if (value) {
+      return `${attribute}-${value}`;
+    }
+
+    return `flexi-${attribute}`;
+  },
+
+  generateOffsetClass: function(breakpointPrefix, colNumber, columnPrefix /*, totalColumns*/) {
+    return (columnPrefix ? columnPrefix + "-" : "") + "offset-" + breakpointPrefix + "-" + colNumber;
   },
 
   /*
@@ -36,15 +50,12 @@ module.exports = {
   /*
     Responders are values which can occur within breakpoint properties
    */
-  responders: ["hidden", "visible"].concat(LayoutProperties),
+  responders: ["hidden", "visible"].concat(LAYOUT_PROPERTIES),
 
   /*
-    Properties are values which can occur directly on the element
+    Attributes are values which can occur directly on the element
    */
-  attributes: LayoutProperties.concat([
-    { name: 'justify', values: ["start", "end", "center", "between", "around"] },
-    { name: 'align', values: ["start", "end", "stretch", "center", "baseline"] }
-  ]),
+  attributes: LAYOUT_PROPERTIES,
 
   // set at build time
   breakpoints: null,
