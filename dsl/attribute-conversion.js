@@ -272,7 +272,7 @@ class AttributeConversionSupport {
       // it will be a ConcatStatement node. In such a case, add a TextNode with our
       // classes to the list of Nodes to be concatenated.
       if (classNode.value.type === 'ConcatStatement') {
-        classNode.value.parts.push({ type: 'TextNode', chars: ' ' + classNames.join(' ') });
+        classNode.value.parts.push({ type: 'TextNode', chars: ` ${classNames.join(' ')}` });
       } else {
         classNode.value.chars = `${classNode.value.chars} ${classNames.join(' ')}`;
       }
