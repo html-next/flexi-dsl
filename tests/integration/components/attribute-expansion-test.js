@@ -6,7 +6,7 @@ moduleForComponent('attribute-expansion', 'Integration | Component | attribute e
 });
 
 test('it renders', function(assert) {
-  this.render(hbs`<box align="center" vertical sm="12 visible horizontal wrap" md="align=end"></box>`);
+  this.render(hbs`<box align="center" vertical sm="12 visible horizontal wrap" md="align=end align-self=center" lg="align-content=between"></box>`);
 
   let box = this.$().find('box').get(0);
 
@@ -16,7 +16,7 @@ test('it renders', function(assert) {
     `We rendered the <box>: ${box.outerHTML}`);
   assert.equal(
     box.className,
-    'align-end-md col-sm-12 visible-sm horizontal-sm wrap-sm flexi-vertical align-center',
+    'align-content-between-lg align-end-md align-self-center-md col-sm-12 visible-sm horizontal-sm wrap-sm flexi-vertical align-center',
     `We rendered the right class names: ${box.outerHTML}`);
 
   this.render(hbs`<hbox fit class="something"></hbox>`);
