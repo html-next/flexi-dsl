@@ -1,9 +1,6 @@
 /* eslint-env node */
 'use strict';
 
-let debug = require('debug')('flexi:component-conversion');
-let getAttribute = require('./helpers/get-attribute');
-
 /**
  * @public
  *
@@ -29,18 +26,16 @@ class ComponentConversionSupport {
     // https://github.com/tildeio/htmlbars/blob/master/packages/htmlbars-syntax/lib/parser.js#L17
     let walker = new this.syntax.Walker();
 
-    walker.visit(ast, (elementNode) => {
+    walker.visit(ast, elementNode => {
       if (!this._isFlexiLayoutComponent(elementNode)) {
         return;
       }
 
       let componentTag = `flexi-${elementNode.tag}`;
 
-      debug(`converting element ${elementNode.tag} to component ${componentTag}`);
-
       // Build a component node so we can swap it with the element node
-      let componentNode
-        = this.syntax.builders.block(componentTag,
+      let componentNode =
+        this.syntax.builders.block(componentTag,
                                    null,
                                    this._makeHash(elementNode.loc, elementNode.attributes),
                                    this.syntax.builders.program(elementNode.children),
@@ -59,8 +54,18 @@ class ComponentConversionSupport {
       && (node.tag === 'container' || this._isResponsiveGrid(node));
   }
 
-  _isResponsiveGrid(node) {
-    return (node.tag === 'grid' && !!getAttribute(node, 'responsive'));
+  _isResponsiveGrid(elementNode) {
+    if (elementNode.tag === 'grid') {
+      let attributes = elementNode.attributes;
+
+      for (let i = 0; i < attributes.length; i++) {
+        if (attributes[i].name === 'responsive') {
+          return true;
+        }
+      }
+    }
+
+    return false;
   }
 
   _makeHash(attrs, loc) {
@@ -70,7 +75,7 @@ class ComponentConversionSupport {
 
     let declareLine = loc.start.line;
 
-    attrs.forEach((attr) => {
+    attrs.forEach(attr => {
       attr.type = 'HashPair';
       attr.value.type = 'StringLiteral';
 
@@ -96,12 +101,12 @@ class ComponentConversionSupport {
   // the element's original properties with our component node's properties.
   _swapNodes(elementNode, componentNode) {
     // Delete all the original keys on the element node
-    Object.keys(elementNode).forEach((key) => {
+    Object.keys(elementNode).forEach(key => {
       delete elementNode[key];
     });
 
     // Add the keys from our component node to the element node
-    Object.keys(componentNode).forEach((key) => {
+    Object.keys(componentNode).forEach(key => {
       elementNode[key] = componentNode[key];
     });
   }

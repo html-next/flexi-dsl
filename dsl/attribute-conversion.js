@@ -2,15 +2,18 @@
 'use strict';
 
 /**
+ * @public
+ *
  * An HTMLBars AST transformation that converts
  * flexi attributes into CSS classes
  **/
 const DSL = require('./dsl-defaults');
 const MIN_COLUMN_COUNT = 1;
 let assign = require('object-assign');
-let removeAttributeFromNode = require('./helpers/remove-attribute');
 
 /**
+ * @public
+ *
  * htmlbars-ast-plugin that gets registered from index.js.
  *
  * AttributeConversionSupport.transform() gets called automatically at build time,
@@ -206,6 +209,8 @@ class AttributeConversionSupport {
   }
 
   /**
+   * @public
+   *
    * Walk through every node in the AST, transforming attributes to CSS
    * classes by altering the "class" AttrNode of relevant elements.
    * To see how the AST looks in Glimmer: http://astexplorer.net/
@@ -250,7 +255,7 @@ class AttributeConversionSupport {
         }
 
         // Remove the custom attribute from the node
-        removeAttributeFromNode(elementNode, attributeNode);
+        elementNode.attributes.splice(elementNode.attributes.indexOf(attributeNode), 1);
       }
 
       // Return early if no classes were generated for the element
