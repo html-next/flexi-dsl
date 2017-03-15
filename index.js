@@ -1,21 +1,15 @@
 /* eslint-env node */
 'use strict';
 
-var getValidatedFlexiConfig = require('@html-next/flexi-config/lib/get-validated-flexi-config');
+let getValidatedFlexiConfig = require('@html-next/flexi-config/lib/get-validated-flexi-config');
 
-var AttributeConversion = require('./dsl/attribute-conversion');
-var ComponentConversion = require('./dsl/component-conversion');
-
-function assert(statement, test) {
-  if (!test) {
-    throw new Error(statement);
-  }
-}
+const AttributeConversion = require('./dsl/attribute-conversion');
+const ComponentConversion = require('./dsl/component-conversion');
 
 module.exports = {
   name: 'flexi-dsl',
 
-  included: function(app, parentAddon) {
+  included(app, parentAddon) {
     this._super.included.apply(this, arguments);
 
     // Quick fix for add-on nesting
@@ -34,20 +28,20 @@ module.exports = {
     }
 
     if (!parentAddon && typeof app.import !== 'function') {
-      throw new Error('flexi-dsl is being used within another addon or engine and is' +
-        ' having trouble registering itself to the parent application.');
+      throw new Error('flexi-dsl is being used within another addon or engine and is'
+        + ' having trouble registering itself to the parent application.');
     }
 
     this.app = app;
     return app;
   },
 
-  isDevelopingAddon: function() {
+  isDevelopingAddon() {
     return false;
   },
 
   _flexiConfig: null,
-  flexiConfig: function() {
+  flexiConfig() {
     if (!this._flexiConfig) {
       this._flexiConfig = getValidatedFlexiConfig(this.project.root);
     }
@@ -55,27 +49,31 @@ module.exports = {
     return this._flexiConfig;
   },
 
-  config: function() {
-    var org = this._super.config.apply(this, arguments);
+  config() {
+    let org = this._super.config.apply(this, arguments);
 
     org.flexi = this.flexiConfig();
     return org;
   },
 
-  setupPreprocessorRegistry: function(type, registry) {
+  setupPreprocessorRegistry(type, registry) {
     AttributeConversion.prototype.flexiConfig = this.flexiConfig();
 
     registry.add('htmlbars-ast-plugin', {
-      name: "flexi-attribute-conversion",
-      before: "flexi-component-conversion",
+      name: 'flexi-attribute-conversion',
+      before: 'flexi-component-conversion',
       plugin: AttributeConversion,
-      baseDir: function() { return __dirname; }
+      baseDir() {
+        return __dirname;
+      }
     });
 
     registry.add('htmlbars-ast-plugin', {
-      name: "flexi-component-conversion",
+      name: 'flexi-component-conversion',
       plugin: ComponentConversion,
-      baseDir: function() { return __dirname; }
+      baseDir() {
+        return __dirname;
+      }
     });
   }
 };

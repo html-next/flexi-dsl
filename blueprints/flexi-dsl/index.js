@@ -1,8 +1,10 @@
-/*jshint node:true*/
-module.exports = {
-  normalizeEntityName: function() {},
+/* eslint-env node */
+'use strict';
 
-  afterInstall: function(options) {
+module.exports = {
+  normalizeEntityName() {},
+
+  afterInstall(options) {
     return this.addAddonToProject({
       name: '@html-next/flexi-config',
       target: '2.0.0-beta.12',

@@ -37,8 +37,6 @@
   },
   "dependencies": {
     "@html-next/flexi-config": "2.0.0-beta.12",
-    "chalk": "^1.1.1",
-    "debug": "^2.2.0",
     "ember-cli-babel": "^5.1.7",
     "ember-cli-preprocess-registry": "^3.0.0",
     "object-assign": "^4.1.0",
