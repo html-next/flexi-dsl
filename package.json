@@ -39,7 +39,6 @@
     "@html-next/flexi-config": "2.0.0-beta.12",
     "ember-cli-babel": "^5.1.7",
     "ember-cli-preprocess-registry": "^3.0.0",
-    "object-assign": "^4.1.0",
     "rsvp": "^3.2.0"
   },
   "devDependencies": {
