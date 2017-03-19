@@ -9,7 +9,6 @@
  **/
 const DSL = require('./dsl-defaults');
 const MIN_COLUMN_COUNT = 1;
-let assign = require('object-assign');
 
 /**
  * @public
@@ -22,7 +21,7 @@ let assign = require('object-assign');
 class AttributeConversionSupport {
   constructor() {
     this.dsl = {};
-    assign(this.dsl, DSL);
+    Object.assign(this.dsl, DSL);
 
     // this.flexiConfig is added to the prototype from index.js
     this.dsl.generateAttributeClass =
@@ -287,7 +286,8 @@ class AttributeConversionSupport {
   }
 
   _isElementWeConvertAttributesFor(node) {
-    return node.type === 'ElementNode' && (this.dsl.transformAll || this.dsl.elements.has(node.tag));
+    return node.type === 'ElementNode'
+      && (this.dsl.transformAll || this.dsl.elements.has(node.tag));
   }
 }
 
