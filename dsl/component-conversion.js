@@ -31,13 +31,11 @@ class ComponentConversionSupport {
         return;
       }
 
-      let componentTag = `flexi-${elementNode.tag}`;
-
       // Build a component node so we can swap it with the element node
       let componentNode =
-        this.syntax.builders.block(componentTag,
+        this.syntax.builders.block(`flexi-${elementNode.tag}`,
                                    null,
-                                   this._makeHash(elementNode.loc, elementNode.attributes),
+                                   this._makeHash(elementNode.attributes, elementNode.loc.start.line),
                                    this.syntax.builders.program(elementNode.children),
                                    null,
                                    this._adjustLocation(elementNode.loc));
@@ -68,31 +66,55 @@ class ComponentConversionSupport {
     return false;
   }
 
-  _makeHash(attrs, loc) {
+  /**
+   * @private
+   *
+   * Converts key-value pairs in the original element into the form used in components.
+   **/
+  _makeHash(attrs, declareLine) {
     if (!attrs || !attrs.length) {
       return null;
     }
 
-    let declareLine = loc.start.line;
-
     attrs.forEach(attr => {
       attr.type = 'HashPair';
-      attr.value.type = 'StringLiteral';
+      attr.key = attr.name;
 
-      if (attr.value.loc.start.line === declareLine) {
-        attr.value.loc.start.column += 7;
+      switch (attr.value.type) {
+        case 'TextNode':
+          attr.value.original = attr.value.chars;
+          attr.value.type = 'StringLiteral';
+          attr.value.value = attr.value.chars;
+          break;
+        case 'MustacheStatement':
+          attr.value = attr.value.path;
+          break;
+        case 'ConcatStatement':
+          throw new Error("Can't convert flexi layout components that have an attribute " +
+            `with a {{}} statement inside a String value. Attribute name: ${attr.name}`);
+        default:
+          throw new Error("Don't know how to convert flexi layout components with " +
+            `attribute values of type ${attr.value.type}. Please report an issue to flexi.`);
       }
 
-      if (attr.value.loc.end.line === declareLine) {
-        attr.value.loc.end.column += 7;
+      let attrLocationNode = attr.value.loc;
+
+      if (attrLocationNode) {
+        if (attrLocationNode.start && attrLocationNode.start.line === declareLine) {
+          attrLocationNode.start.column += 6;
+        }
+
+        if (attrLocationNode.end && attrLocationNode.end.line === declareLine) {
+          attrLocationNode.end.column += 6;
+        }
       }
     });
 
-    return { pairs: attrs };
+    return { type: 'Hash', pairs: attrs };
   }
 
   _adjustLocation(loc) {
-    loc.end.column += 7;
+    loc.end.column += 6;
 
     return loc;
   }
