@@ -6,7 +6,7 @@ moduleForComponent('component-conversion', 'Integration | Component | component 
 });
 
 test('it converts the <container> component', function(assert) {
-  this.render(hbs`<container></container>`);
+  this.render(hbs`<container class="low-class"></container>`);
 
   let container = this.$().find('container').get(0);
 
@@ -18,10 +18,13 @@ test('it converts the <container> component', function(assert) {
   // Ensure the container was turned into a component
   assert.ok((typeof container.id === 'string'),
             `Container did not have a String 'id' property: ${container.outerHTML}`);
+
+  assert.ok(container.className.indexOf('low-class') !== -1,
+            `We rendered the container with the correct classes ${container.outerHTML}`);
 });
 
 test('it converts the <grid responsive> component', function(assert) {
-  this.render(hbs`<grid responsive></grid>`);
+  this.render(hbs`<grid responsive class="high-class"></grid>`);
 
   let grid = this.$().find('grid').get(0);
 
@@ -33,6 +36,9 @@ test('it converts the <grid responsive> component', function(assert) {
   // Ensure the responsive grid was turned into a component
   assert.ok((typeof grid.id === 'string'),
             `Responsive grid did not have a String 'id' property: ${grid.outerHTML}`);
+
+  assert.ok(grid.className.indexOf('high-class') !== -1,
+            `We rendered the grid with the correct classes ${grid.outerHTML}`);
 });
 
 test('it does not convert the <grid> element', function(assert) {
