@@ -1,6 +1,6 @@
 {
   "name": "@html-next/flexi-dsl",
-  "version": "2.0.0-beta.12",
+  "version": "2.0.0-rc.1",
   "description": "Just a layout framework. Design for cross-platform with ease.",
   "keywords": [
     "layout",
@@ -36,7 +36,7 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "@html-next/flexi-config": "2.0.0-beta.12",
+    "@html-next/flexi-config": "2.0.0-rc.1",
     "ember-cli-babel": "^5.1.7",
     "ember-cli-preprocess-registry": "^3.0.0",
     "rsvp": "^3.2.0"
