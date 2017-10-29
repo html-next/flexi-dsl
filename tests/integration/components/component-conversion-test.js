@@ -53,6 +53,6 @@ test('it does not convert the <grid> element', function(assert) {
   // Note that a component would gain an 'id' property
   assert.equal(grid.outerHTML,
                '<grid></grid>',
-              `Grid was not rendered as an empty <grid></grid>, got: ${grid.outerHTML}`);
+               `Grid was not rendered as an empty <grid></grid>, got: ${grid.outerHTML}`);
 });
 
