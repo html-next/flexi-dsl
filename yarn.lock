@@ -85,23 +85,21 @@
   dependencies:
     "@glimmer/util" "^0.25.4"
 
-"@html-next/flexi-config@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@html-next/flexi-config/-/flexi-config-2.0.0.tgz#f1808ea0242a4b10342ed606560a588073531116"
-  dependencies:
-    ember-cli-babel "^6.0.0"
-
-"@html-next/flexi-layouts@2.0.2":
+"@html-next/flexi-config@2.0.2":
   version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@html-next/flexi-layouts/-/flexi-layouts-2.0.2.tgz#33f1fbdb62f34c5eae5f24beab7df32fe1e4dceb"
+  resolved "https://registry.yarnpkg.com/@html-next/flexi-config/-/flexi-config-2.0.2.tgz#a7567e71a49918efdfa897cf545f8f1341885183"
+
+"@html-next/flexi-layouts@2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@html-next/flexi-layouts/-/flexi-layouts-2.0.3.tgz#880e614c67e3a343933047470bd033566da40d95"
   dependencies:
-    "@html-next/flexi-config" "2.0.0"
+    "@html-next/flexi-config" "2.0.2"
     broccoli-funnel "^2.0.1"
     broccoli-merge-trees "^2.0.0"
     broccoli-plugin "^1.2.1"
     chalk "^2.1.0"
     debug "^3.0.1"
-    ember-cli-babel "^6.3.0"
+    ember-cli-babel "^6.8.2"
     ember-cli-htmlbars "^2.0.1"
     ember-cli-preprocess-registry "^3.0.0"
     rsvp "^4.0.1"
@@ -1833,7 +1831,7 @@ electron-to-chromium@^1.3.14:
   version "1.3.14"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.14.tgz#64af0f9efd3c3c6acd57d71f83b49ca7ee9c4b43"
 
-ember-cli-babel@^6.0.0, ember-cli-babel@^6.0.0-beta.7:
+ember-cli-babel@^6.0.0-beta.7:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-6.4.1.tgz#785a1c24fe3250eb0776b1ab3cee857863b44542"
   dependencies:
@@ -1849,7 +1847,7 @@ ember-cli-babel@^6.0.0, ember-cli-babel@^6.0.0-beta.7:
     clone "^2.0.0"
     ember-cli-version-checker "^2.0.0"
 
-ember-cli-babel@^6.3.0, ember-cli-babel@^6.8.2:
+ember-cli-babel@^6.8.2:
   version "6.8.2"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-6.8.2.tgz#eac2785964f4743f4c815cd53c6288f00cc087d7"
   dependencies:

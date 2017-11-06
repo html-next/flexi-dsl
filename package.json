@@ -36,12 +36,12 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "@html-next/flexi-config": "2.0.0",
+    "@html-next/flexi-config": "2.0.2",
     "ember-cli-preprocess-registry": "^3.0.0",
     "rsvp": "^3.2.0"
   },
   "devDependencies": {
-    "@html-next/flexi-layouts": "2.0.2",
+    "@html-next/flexi-layouts": "2.0.3",
     "broccoli-asset-rev": "^2.4.5",
     "ember-cli": "~2.16.2",
     "ember-cli-babel": "^6.8.2",
