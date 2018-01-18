@@ -1,5 +1,7 @@
 # Flexi-dsl
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/html-next/flexi-dsl.svg)](https://greenkeeper.io/)
+
 [![npm version](https://badge.fury.io/js/%40html-next%2Fflexi-dsl.svg)](https://badge.fury.io/js/%40html-next%2Fflexi-dsl)
 [![Build Status](https://travis-ci.org/html-next/flexi-dsl.svg)](https://travis-ci.org/html-next/flexi-dsl)
 [![Code Climate](https://codeclimate.com/github/html-next/flexi-dsl/badges/gpa.svg)](https://codeclimate.com/github/html-next/flexi-dsl)
