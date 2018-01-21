@@ -1,4 +1,3 @@
-/* eslint-env node */
 'use strict';
 
 let getValidatedFlexiConfig = require('@html-next/flexi-config/lib/get-validated-flexi-config');
@@ -7,7 +6,7 @@ const AttributeConversion = require('./dsl/attribute-conversion');
 const ComponentConversion = require('./dsl/component-conversion');
 
 module.exports = {
-  name: 'flexi-dsl',
+  name: '@html-next/flexi-dsl',
 
   included(app, parentAddon) {
     this._super.included.apply(this, arguments);
@@ -28,7 +27,7 @@ module.exports = {
     }
 
     if (!parentAddon && typeof app.import !== 'function') {
-      throw new Error('flexi-dsl is being used within another addon or engine and is'
+      throw new Error('@html-next/flexi-dsl is being used within another addon or engine and is'
         + ' having trouble registering itself to the parent application.');
     }
 

@@ -12,15 +12,15 @@ test('it converts the <container> component', function(assert) {
 
   // Basic sanity check to ensure the container was rendered
   assert.equal(container.tagName.toLowerCase(),
-               'container',
-               `We rendered the <container>: ${container.outerHTML}`);
+    'container',
+    `We rendered the <container>: ${container.outerHTML}`);
 
   // Ensure the container was turned into a component
   assert.ok((typeof container.id === 'string'),
-            `Container did not have a String 'id' property: ${container.outerHTML}`);
+    `Container did not have a String 'id' property: ${container.outerHTML}`);
 
   assert.ok(container.className.indexOf('low-class') !== -1,
-            `We rendered the container with the correct classes ${container.outerHTML}`);
+    `We rendered the container with the correct classes ${container.outerHTML}`);
 });
 
 test('it converts the <grid responsive> component', function(assert) {
@@ -30,15 +30,15 @@ test('it converts the <grid responsive> component', function(assert) {
 
   // Basic sanity check to ensure the responsive grid was rendered
   assert.equal(grid.tagName.toLowerCase(),
-               'grid',
-               `We rendered the <grid responsive>: ${grid.outerHTML}`);
+    'grid',
+    `We rendered the <grid responsive>: ${grid.outerHTML}`);
 
   // Ensure the responsive grid was turned into a component
   assert.ok((typeof grid.id === 'string'),
-            `Responsive grid did not have a String 'id' property: ${grid.outerHTML}`);
+    `Responsive grid did not have a String 'id' property: ${grid.outerHTML}`);
 
   assert.ok(grid.className.indexOf('high-class') !== -1,
-            `We rendered the grid with the correct classes ${grid.outerHTML}`);
+    `We rendered the grid with the correct classes ${grid.outerHTML}`);
 });
 
 test('it does not convert the <grid> element', function(assert) {
@@ -52,7 +52,7 @@ test('it does not convert the <grid> element', function(assert) {
   // Ensure the grid was NOT turned into a component.
   // Note that a component would gain an 'id' property
   assert.equal(grid.outerHTML,
-               '<grid></grid>',
-               `Grid was not rendered as an empty <grid></grid>, got: ${grid.outerHTML}`);
+    '<grid></grid>',
+    `Grid was not rendered as an empty <grid></grid>, got: ${grid.outerHTML}`);
 });
 
