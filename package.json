@@ -37,7 +37,7 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "@html-next/flexi-config": "2.1.0",
+    "@html-next/flexi-config": "2.1.1",
     "ember-cli-preprocess-registry": "^3.0.0",
     "rsvp": "^4.8.0"
   },
