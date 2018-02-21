@@ -43,7 +43,7 @@
     "rsvp": "^4.8.0"
   },
   "devDependencies": {
-    "@html-next/flexi-layouts": "2.0.3",
+    "@html-next/flexi-layouts": "2.1.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-cli": "~3.1.0-beta.1",
     "ember-cli-babel": "^6.6.0",
