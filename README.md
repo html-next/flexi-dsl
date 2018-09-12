@@ -33,10 +33,7 @@ Note that no default styles will be included unless you also install [flexi-defa
 
 ## Support, Questions, Collaboration
 
-Join the [flexi](https://embercommunity.slack.com/messages/e-flexi/) channel on Slack.
-
-[![Slack Status](https://ember-community-slackin.herokuapp.com/badge.svg)](https://ember-community-slackin.herokuapp.com/)
-
+Join the [Ember community on Discord](https://discord.gg/zT3asNS)
 
 ## Contributing
 
