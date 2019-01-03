@@ -6,7 +6,7 @@ const AttributeConversion = require('./dsl/attribute-conversion');
 const ComponentConversion = require('./dsl/component-conversion');
 
 module.exports = {
-  name: '@html-next/flexi-dsl',
+  name: require('./package').name,
 
   included(app, parentAddon) {
     this._super.included.apply(this, arguments);
