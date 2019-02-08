@@ -1873,6 +1873,16 @@ broccoli-clean-css@^1.1.0:
     inline-source-map-comment "^1.0.5"
     json-stable-stringify "^1.0.0"
 
+broccoli-clean-css@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/broccoli-clean-css/-/broccoli-clean-css-2.0.1.tgz#1bf48a43d7626522621351c696e5f9441f628db2"
+  integrity sha1-G/SKQ9diZSJiE1HGluX5RB9ijbI=
+  dependencies:
+    broccoli-persistent-filter "^1.2.13"
+    clean-css-promise "^2.0.1"
+    json-stable-stringify "^1.0.1"
+    source-map-to-comment "^1.1.0"
+
 broccoli-concat@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/broccoli-concat/-/broccoli-concat-3.2.2.tgz#86ffdc52606eb590ba9f6b894c5ec7a016f5b7b9"
@@ -2091,6 +2101,25 @@ broccoli-node-info@1.1.0, broccoli-node-info@^1.1.0:
 broccoli-persistent-filter@^1.0.3, broccoli-persistent-filter@^1.1.6, broccoli-persistent-filter@^1.4.0, broccoli-persistent-filter@^1.4.3:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/broccoli-persistent-filter/-/broccoli-persistent-filter-1.4.3.tgz#3511bc52fc53740cda51621f58a28152d9911bc1"
+  dependencies:
+    async-disk-cache "^1.2.1"
+    async-promise-queue "^1.0.3"
+    broccoli-plugin "^1.0.0"
+    fs-tree-diff "^0.5.2"
+    hash-for-dep "^1.0.2"
+    heimdalljs "^0.2.1"
+    heimdalljs-logger "^0.1.7"
+    mkdirp "^0.5.1"
+    promise-map-series "^0.2.1"
+    rimraf "^2.6.1"
+    rsvp "^3.0.18"
+    symlink-or-copy "^1.0.1"
+    walk-sync "^0.3.1"
+
+broccoli-persistent-filter@^1.2.13:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/broccoli-persistent-filter/-/broccoli-persistent-filter-1.4.6.tgz#80762d19000880a77da33c34373299c0f6a3e615"
+  integrity sha512-0RejLwoC95kv4kta8KAa+FmECJCK78Qgm8SRDEK7YyU0N9Cx6KpY3UCDy9WELl3mCXLN8TokNxc7/hp3lL4lfw==
   dependencies:
     async-disk-cache "^1.2.1"
     async-promise-queue "^1.0.3"
@@ -2516,12 +2545,26 @@ clean-css-promise@^0.1.0:
     clean-css "^3.4.5"
     pinkie-promise "^2.0.0"
 
+clean-css-promise@^2.0.1:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/clean-css-promise/-/clean-css-promise-2.1.0.tgz#2a43936585d56547d7fa0913ff2156f5652d77da"
+  integrity sha512-drIjos9WjRSllp3UO/g/pB731+d0hlC/bFuqFFoE/s7kuYHD2Zvl1hQvX5Tf/JRVUxKOjmvHAPP0TJjUbkXXTQ==
+  dependencies:
+    clean-css "^4.1.9"
+
 clean-css@^3.4.5:
   version "3.4.28"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-3.4.28.tgz#bf1945e82fc808f55695e6ddeaec01400efd03ff"
   dependencies:
     commander "2.8.x"
     source-map "0.4.x"
+
+clean-css@^4.1.9:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
+  integrity sha512-4ZxI6dy4lrY6FHzfiy1aEOXgu4LIsW2MhwG0VBKdcoGoH/XLFgaHSdLTGr4O8Be6A8r3MOphEiI8Gc1n0ecf3g==
+  dependencies:
+    source-map "~0.6.0"
 
 clean-up-path@^1.0.0:
   version "1.0.0"
@@ -3246,6 +3289,16 @@ ember-cli-preprocess-registry@^3.1.2:
     ember-cli-lodash-subset "^1.0.7"
     process-relative-require "^1.0.0"
     silent-error "^1.0.0"
+
+ember-cli-preprocess-registry@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-preprocess-registry/-/ember-cli-preprocess-registry-3.2.0.tgz#6c80f74b6506525f545eec985b7a5050c557f8d4"
+  integrity sha512-T9fDP43Y7/F+KVJdM4QvkDniyP2NZIgPI+lJwFIFCcXkDk5VKVAJiev+6NBmfD2EYHNWReoyzYSK6dMhr84xWw==
+  dependencies:
+    broccoli-clean-css "^2.0.1"
+    broccoli-funnel "^2.0.1"
+    debug "^3.0.1"
+    process-relative-require "^1.0.0"
 
 ember-cli-sri@^2.1.1:
   version "2.1.1"
@@ -7719,6 +7772,11 @@ source-map-support@~0.5.6:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
 
+source-map-to-comment@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/source-map-to-comment/-/source-map-to-comment-1.1.0.tgz#e518c40bc7399b2e23c8e331a11635a97750e9c3"
+  integrity sha1-5RjEC8c5my4jyOMxoRY1qXdQ6cM=
+
 source-map-url@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.3.0.tgz#7ecaf13b57bcd09da8a40c5d269db33799d4aaf9"
@@ -7737,7 +7795,7 @@ source-map@^0.5.0, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.0, sour
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
-source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
+source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
