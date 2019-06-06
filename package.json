@@ -41,7 +41,7 @@
   "dependencies": {
     "@html-next/flexi-config": "^2.2.0",
     "ember-cli-preprocess-registry": "^3.0.0",
-    "rsvp": "^4.8.0"
+    "rsvp": "^4.8.5"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.6.3",
