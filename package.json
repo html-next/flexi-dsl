@@ -48,7 +48,7 @@
     "@html-next/flexi-layouts": "2.1.0",
     "broccoli-asset-rev": "^2.7.0",
     "ember-cli": "~3.6.0",
-    "ember-cli-babel": "^7.1.2",
+    "ember-cli-babel": "^7.13.0",
     "ember-cli-dependency-checker": "^3.0.0",
     "ember-cli-eslint": "^4.2.3",
     "ember-cli-htmlbars": "^3.0.0",
